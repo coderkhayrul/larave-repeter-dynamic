@@ -22,6 +22,9 @@
                     <input data-repeater-create type="button" class="btn btn-success mt-3 mt-lg-0" value="Add" />
                 </div>
                 <div class="card-body">
+                    <div class="my-3">
+
+                    </div>
                     <div data-repeater-list="categoryProduct">
                         <div data-repeater-item class="row my-3">
                             <div class="col-md-3">
@@ -89,8 +92,19 @@
                 console.log('Category Not Found');
             }
         });
-
     </script>
+
+<script>
+    @if (Session::has('success'))
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: '{{ Session::get('success') }}',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    @endif
+</script>
 </body>
 
 </html>
